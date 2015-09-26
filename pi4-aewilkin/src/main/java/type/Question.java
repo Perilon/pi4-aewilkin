@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores the information about a question.
- * Updated by JCasGen Sat Sep 26 15:43:47 EDT 2015
+ * Updated by JCasGen Sat Sep 26 17:18:47 EDT 2015
  * XML source: /home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class Question extends ComponentAnnotation {

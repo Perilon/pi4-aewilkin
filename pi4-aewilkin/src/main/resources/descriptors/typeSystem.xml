@@ -97,5 +97,22 @@ You need to implement the types requried for your ranking model.</description>
         </featureDescription>
       </features>
     </typeDescription>
-    </types>
+    <typeDescription>
+      <name>type.Token</name>
+      <description>Tokens.</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>toStringValue</name>
+          <description>Token as a string</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.QASet</name>
+      <description>Keeps track of which questions go with which answers</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+    </typeDescription>
+  </types>
 </typeSystemDescription>

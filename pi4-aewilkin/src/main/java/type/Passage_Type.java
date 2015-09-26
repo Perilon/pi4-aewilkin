@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information of the passage.
- * Updated by JCasGen Sat Sep 26 15:43:47 EDT 2015
+ * Updated by JCasGen Sat Sep 26 17:18:47 EDT 2015
  * @generated */
 public class Passage_Type extends ComponentAnnotation_Type {
   /** @generated 
