@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>false</primitive>  <analysisEngineMetaData>
-    <name>aaeDescriptor</name>
-    <description>This is a template (empty) descriptor for your Aggregate Analysis Engine.  You will need to specify your type system and capabilities, in addition to your individual analysis engines.</description>
+  <primitive>true</primitive>  <annotatorImplementationName>PassageAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>PassageAnnotatorDescriptor</name>
+    <description/>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>
     <configurationParameterSettings/>
-    <flowConstraints>
-      <fixedFlow/>
-    </flowConstraints>
+    <typeSystemDescription>
+      <imports>
+        <import location="/home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/typeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
     <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>
         <inputs/>
-        <outputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">type.Passage</type>
+        </outputs>
         <languagesSupported/>
       </capability>
     </capabilities>

@@ -71,24 +71,29 @@ You need to implement the types requried for your ranking model.</description>
       <supertypeName>type.ComponentAnnotation</supertypeName>
       <features>
         <featureDescription>
-          <name>text</name>
-          <description>The passage text extracted from the source document.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
           <name>label</name>
           <description>This stores a gold standard label of this answer.  'True' means that it answers the question; otherwise, it is does not.</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
       <featureDescription>
           <name>sourceDocId</name>
-          <description>This specifies the source document id to which the passage belongs to.</description>
+          <description>This specifies the source document ID to which the passage belongs.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       <featureDescription>
           <name>question</name>
           <description>A question associated with this passage.</description>
           <rangeTypeName>type.Question</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>id</name>
+          <description>The ID that matches the question for which the passage is a candidate answer</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>sentence</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
