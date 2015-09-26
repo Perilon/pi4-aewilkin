@@ -27,21 +27,7 @@ You need to implement the types requried for your ranking model.</description>
       <name>type.InputDocument</name>
       <description>Stores all the questions and its associated answer candidates.</description>
       <supertypeName>type.ComponentAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>passages</name>
-          <description>All the passages found in the input file.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
-          <elementType>type.Passage</elementType>
-        </featureDescription>
-        <featureDescription>
-          <name>questions</name>
-          <description>All the questions found in the input file.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
-          <elementType>type.Question</elementType>
-        </featureDescription>
-      </features>
-    </typeDescription>
+      </typeDescription>
     <typeDescription>
       <name>type.Question</name>
       <description>Stores the information about a question.</description>
@@ -113,6 +99,19 @@ You need to implement the types requried for your ranking model.</description>
       <name>type.QASet</name>
       <description>Keeps track of which questions go with which answers</description>
       <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Question</name>
+          <description>The question in a QASet</description>
+          <rangeTypeName>type.Question</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>PassageFSArray</name>
+          <description>An FSArray of the passages purporting to answer a question in a QASet</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>type.Passage</elementType>
+        </featureDescription>
+      </features>
     </typeDescription>
   </types>
 </typeSystemDescription>

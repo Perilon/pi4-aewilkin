@@ -68,7 +68,6 @@ public class PassageAnnotator extends JCasAnnotator_ImplBase {
       annotation.setSentence(finalSentence);
       
       
-      
       annotation.addToIndexes();
       pos = matcher.end();
     }

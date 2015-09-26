@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores all the questions and its associated answer candidates.
- * Updated by JCasGen Sat Sep 26 17:18:47 EDT 2015
- * XML source: /home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/typeSystem.xml
+ * Updated by JCasGen Sat Sep 26 18:11:59 EDT 2015
+ * XML source: /home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/aaeDescriptor.xml
  * @generated */
 public class InputDocument extends ComponentAnnotation {
   /** @generated
@@ -76,48 +76,6 @@ public class InputDocument extends ComponentAnnotation {
      
  
     
-  //*--------------*
-  //* Feature: passages
-
-  /** getter for passages - gets All the passages found in the input file.
-   * @generated
-   * @return value of the feature 
-   */
-  public FSList getPassages() {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_passages == null)
-      jcasType.jcas.throwFeatMissing("passages", "type.InputDocument");
-    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_passages)));}
-    
-  /** setter for passages - sets All the passages found in the input file. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setPassages(FSList v) {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_passages == null)
-      jcasType.jcas.throwFeatMissing("passages", "type.InputDocument");
-    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_passages, jcasType.ll_cas.ll_getFSRef(v));}    
-   
-    
-  //*--------------*
-  //* Feature: questions
-
-  /** getter for questions - gets All the questions found in the input file.
-   * @generated
-   * @return value of the feature 
-   */
-  public FSList getQuestions() {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_questions == null)
-      jcasType.jcas.throwFeatMissing("questions", "type.InputDocument");
-    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_questions)));}
-    
-  /** setter for questions - sets All the questions found in the input file. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setQuestions(FSList v) {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_questions == null)
-      jcasType.jcas.throwFeatMissing("questions", "type.InputDocument");
-    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_questions, jcasType.ll_cas.ll_getFSRef(v));}    
-  }
+}
 
     

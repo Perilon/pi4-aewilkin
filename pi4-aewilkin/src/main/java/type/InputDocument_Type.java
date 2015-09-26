@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores all the questions and its associated answer candidates.
- * Updated by JCasGen Sat Sep 26 17:18:47 EDT 2015
+ * Updated by JCasGen Sat Sep 26 18:11:59 EDT 2015
  * @generated */
 public class InputDocument_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -45,56 +45,6 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
   @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.InputDocument");
  
-  /** @generated */
-  final Feature casFeat_passages;
-  /** @generated */
-  final int     casFeatCode_passages;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public int getPassages(int addr) {
-        if (featOkTst && casFeat_passages == null)
-      jcas.throwFeatMissing("passages", "type.InputDocument");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_passages);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setPassages(int addr, int v) {
-        if (featOkTst && casFeat_passages == null)
-      jcas.throwFeatMissing("passages", "type.InputDocument");
-    ll_cas.ll_setRefValue(addr, casFeatCode_passages, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_questions;
-  /** @generated */
-  final int     casFeatCode_questions;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public int getQuestions(int addr) {
-        if (featOkTst && casFeat_questions == null)
-      jcas.throwFeatMissing("questions", "type.InputDocument");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_questions);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setQuestions(int addr, int v) {
-        if (featOkTst && casFeat_questions == null)
-      jcas.throwFeatMissing("questions", "type.InputDocument");
-    ll_cas.ll_setRefValue(addr, casFeatCode_questions, v);}
-    
-  
-
-
-
   /** initialize variables to correspond with Cas Type and Features
 	 * @generated
 	 * @param jcas JCas
@@ -103,14 +53,6 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
   public InputDocument_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
-
- 
-    casFeat_passages = jcas.getRequiredFeatureDE(casType, "passages", "uima.cas.FSList", featOkTst);
-    casFeatCode_passages  = (null == casFeat_passages) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_passages).getCode();
-
- 
-    casFeat_questions = jcas.getRequiredFeatureDE(casType, "questions", "uima.cas.FSList", featOkTst);
-    casFeatCode_questions  = (null == casFeat_questions) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_questions).getCode();
 
   }
 }
