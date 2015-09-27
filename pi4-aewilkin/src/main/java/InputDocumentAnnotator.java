@@ -95,7 +95,11 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
           }
         }
         
-        passage.setScore(matchesCounter / passageListLen);
+        
+        passage.setScore((double) matchesCounter / (double) passageListLen);
+//        System.out.println("matchesCounter = " + matchesCounter);
+//        System.out.println("passageListLen = " + passageListLen);
+//        System.out.println("score = " + ((double) matchesCounter / (double) passageListLen));
         passage.addToIndexes();
         
 //        System.out.println(passage);

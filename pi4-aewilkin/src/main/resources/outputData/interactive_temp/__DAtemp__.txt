@@ -1,5 +1,27 @@
-2091 QUESTION  What is Eminem's real name?
-2092 QUESTION  When was the telegraph invented?
-2093 QUESTION  Which city is home to Superman?
-2094 QUESTION  When was JFK born?
-2098 QUESTION  What player has been the home run champion of the national league seven times?
+1910 QUESTION  What are pennies made of?
+1911 QUESTION  What is the name of the chart that tells you the symbol for all chemical elements?
+1910 NYT19980610.0481 1 1943: Due to copper shortage during World War II, pennies are made of zinc-coated steel.
+1910 APW20000225.0052 -1 Known as small-cap investments, penny stocks are usually worth what their name infers: just pennies per share.
+1910 NYT20000703.0101 1 Larry Spence (454-3003) says that during World War II, copper was needed for the war effort, so 1943 pennies were made of steel. A few 1943 pennies (blank, S or D) were made of copper. These copper ones are valuable, but few have been
+1910 NYT20000703.0102 -1 ut the air brakes on if necessary. These functions are now performed by FRED, or flashing rear end device. Many cabooses ended up in scrap yards; some have more interesting second careers as lake houses or diners. </P> <P>    Q: How do we get a quest
+1910 NYT19990811.0468 -1 By JOHN TIERNEY     c.1999 N.Y. Times News Service    <TEXT> <P>    NEW YORK _ As New Yorkers struggle through the great penny shortage of 1999, there are profound mysteries to contemplate: </P> <P>    How many bonuses must banks and stores offer t
+1910 NYT19990315.0143 1 In 1943 most pennies were made of steel.
+1910 NYT19990315.0143 -1 steel. But a few (blank, S or D) were ma
+1910 NYT20000703.0102 1 pennies were made of steel. A few 1943 pennies (blank, S or D) were made of copper. These copper ones are valuable, but few have been found. Some 1943 steel pennies have turned black, so owners believe they are copper. Counterfeiters occasionally
+1910 NYT19990817.0278 -1 Just ask Antoine Thomas, a shift manager at a downtown McDonald's. He has been so short of pennies lately that he considered snatching a handful from his children's piggy bank. </P> <P>    ``I do not have a single penny in this store, and we are losi
+1910 NYT19990730.0340 -1 coins and reimburse consumers for dumping coins in the hopper, after subtracting an 8.9 percent fee for the service. For the first time last May, Americans put more coins back in circulation using coin-processing machines than the U.S. Mint produced,
+1910 NYT19990315.0143 1 a mint mark. Could you find out what it is worth? </P> <P>    A: Do you have a magnet? If the penny is attracted to the magnet, it is steel and may be worth as much as 10 cents. </P> <P>    Rare coin dealer Larry Spencesays during World War II copper
+1910 NYT19980610.0481 1 1943: Due to copper shortage during World War II, pennies are made of zinc-coated steel. <
+1910 NYT20000703.0102 -1 A few 1943 pennies (blank, S or D) were made of coppe
+1911 NYT19990128.0413 -1 containing 114 protons and about 184 neutrons in its nucleus. The resulting atom of Element 114 survived for about 30 seconds, they said, a long period compared with the decay rates
+1911 NYT19980601.0295 -1 (The notion of a quasi-chemical symbol as bumper sticker was used again in 1964 to denote the name of Goldwater:  &UR;
+1911 NYT19990616.0385 -1 the (now defunct) wedding of  &UR; Roseanne Barr &LR;  to  &UR; Tom &LR;   &UR; Arnold &LR; . </P> <P>    Each ketubah includes traditional Jewish design elements, the names of the couple, &LR;  and personal symbols of the couple. </P> <P>    In the
+1911 NYT20000621.0050 -1 of celebrities in the honors list that included Sam Mendes, director of the Oscar-winning film ``American Beauty'' (CBE); Harry Potter author Joanne K. Rowling (OBE); thriller writer Dick Francis (CBE); pop singer Lulu Kennedy-Cairns, whose professio
+1911 NYT19991025.0108 -1 &HT;    c. 1999 Cox News Service <TEXT> <P>    In the last decade or so, in a runup to the millennium observance, the media has been packaging much of its information into trendy lists: the 100 Best Movies of the Century, the All-Century Baseball T
+1911 NYT19990128.0413 -1 ``If confirmed, the synthesis of Element 114 will create an important new opportunity to study the physics of extremely heavy elements,'' he said.
+1911 NYT19990128.0413 -1 lement 114 will create an important new opportunity to study the physics of extremely heavy elements,'' he said. </P> </TEXT> </BODY> <TRAILER> NY
+1911 NYT20000621.0050 -1 What chemical elements are named after the other three? </P> <P>    A: They are einsteinium (chemical symbol Es, atomic number 99); bohrium (symbol Bh, atomic number 107); and fermium (symbol Fm, atomic number 100). </P> <P>    All three are
+1911 NYT19991101.0146 -1 Maybe you didn't know that copper is based on the Latin Cyprum for Cyprus. Or Gallium for the Latin Gallia, for France. Or that Hafnium _ surely you've heard of good old 72, Hafnium _ is based on the Latin Hafnia (Copenhagen). </P> <P>    Ytterby, Sw
+1911 NYT19980610.0255 1 The class nerd memorized it. The chemistry teacher knelt before it. And you _ you kind of liked the colors. </P> <P>    ``It'' is the Periodic Table of Elements, that ubiquitous classroom wall chart. The table has found a welcome home on the Web, whe
+1911 NYT19991102.0147 1 wife Sarah conceive Isaac), and herpetology (Satan as serpent in Garden of Eden). </P> <P>    Because the Bible says Lot's wife was turned to a pillar of salt, the state also chose to drop the periodic chart of the elements from all chemistry classes
+1911 NYT19980721.0148 -1 Glass got caught after he wrote a story, making up the name of the company, complete with a full name, employees, profit chart and a convention. When a high-tech reporter read about ``Jukt Micronics,'' he wondered why he, who covered high-tech busi

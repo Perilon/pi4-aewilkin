@@ -1,4 +1,4 @@
-11:55:37.942 - 17: org.apache.uima.collection.impl.cpm.CPMImpl.process: WARNING: Processing the request to stop the CPM. (Thread Name: AWT-EventQueue-0)
-11:55:37.967 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: AWT-EventQueue-0) 
-11:55:37.967 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: AWT-EventQueue-0)
-11:55:37.967 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2005. (Thread Name: AWT-EventQueue-0) 
+12:26:03.691 - 17: org.apache.uima.collection.impl.cpm.CPMImpl.process: WARNING: Processing the request to stop the CPM. (Thread Name: AWT-EventQueue-0)
+12:26:03.708 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: AWT-EventQueue-0) 
+12:26:03.708 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: AWT-EventQueue-0)
+12:26:03.709 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2005. (Thread Name: AWT-EventQueue-0) 

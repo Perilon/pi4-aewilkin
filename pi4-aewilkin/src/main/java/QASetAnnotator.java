@@ -77,7 +77,7 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
           
           if ((passage.getId()).equals(QID)) {
           
-          System.out.println(passage);
+//          System.out.println(passage);
           passageArrayList.add(passage);          
         }        
       }
