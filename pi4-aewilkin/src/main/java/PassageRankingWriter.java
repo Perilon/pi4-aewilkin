@@ -41,13 +41,13 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
    * output files will be written.
    */
   
-//  public static final String PARAM_OUTPUTDIR = "outputDir";
+  public static final String PARAM_OUTPUTDIR = "OutputDir";
   
-  public static final String PARAM_OUTPUTDIR = "src/main/resources/outputData/";
+//  public static final String PARAM_OUTPUTDIR = "src/main/resources/outputData/";
   
-//  public static final String PARAM_INPUTDIR = "inputDir";
+  public static final String PARAM_INPUTDIR = "InputDir";
   
-  public static final String PARAM_INPUTDIR = "src/main/resources/inputData/";
+//  public static final String PARAM_INPUTDIR = "src/main/resources/inputData/";
 
 
   private File mOutputDir;
@@ -56,8 +56,8 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
 
   public void initialize() throws ResourceInitializationException {
     mDocNum = 0;
-//    mOutputDir = new File((String) getConfigParameterValue(PARAM_OUTPUTDIR));
-    mOutputDir = new File("/home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/outputData");
+    mOutputDir = new File((String) getConfigParameterValue(PARAM_OUTPUTDIR));
+//    mOutputDir = new File("/home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/outputData");
     if (!mOutputDir.exists()) {
       mOutputDir.mkdirs();
     }

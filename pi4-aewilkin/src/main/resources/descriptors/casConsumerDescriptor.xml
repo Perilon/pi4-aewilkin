@@ -26,13 +26,13 @@
       <nameValuePair>
         <name>OutputDir</name>
         <value>
-          <string>src/main/resources/outputData</string>
+          <string>src/main/resources/outputData/</string>
         </value>
       </nameValuePair>
     <nameValuePair>
         <name>InputDir</name>
         <value>
-          <string>src/main/resources/inputData</string>
+          <string>src/main/resources/inputData/</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
