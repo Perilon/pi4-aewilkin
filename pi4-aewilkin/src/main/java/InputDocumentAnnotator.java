@@ -84,19 +84,34 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
         }
 
         int matchesCounter = 0;
+        int worthyMatches = 0;
         
         for (int k = 0; k < tokenQuestionStringArray.length; k++) {
-//          System.out.println(tokenQuestionStringArray[k]);
+
           for (int L = 0; L < tokenPassageStringArray.length; L++) {
-//            System.out.println(tokenPassageStringArray[k]);
-            if (tokenQuestionStringArray[k].equals(tokenPassageStringArray[L])) {
-              matchesCounter++;
+            
+            /*Precision is calculated with the numerator being the number of matches (naturally) and the denominator
+            being the number of words that represent "real" tokens in the passage; i.e., this disincludes HTML
+            tags and the words they enclose.*/
+            
+            if (!tokenPassageStringArray[L].equals("") &&
+                    tokenPassageStringArray[L].charAt(0) != '<' && 
+                    tokenPassageStringArray[L].charAt(tokenPassageStringArray[L].length() - 1) != '>') {
+              worthyMatches++;
+              if (tokenQuestionStringArray[k].equals(tokenPassageStringArray[L])) {
+                matchesCounter++;
+              }
             }
           }
         }
         
+        double precision = (double) matchesCounter / (double) worthyMatches;
+        double recall = (double) matchesCounter / (double) tokenQuestionStringArray.length;
         
-        passage.setScore((double) matchesCounter / (double) passageListLen);
+        double F1 = 2 * ((precision * recall) / (precision + recall));
+        
+        
+        passage.setScore(F1);
 //        System.out.println("matchesCounter = " + matchesCounter);
 //        System.out.println("passageListLen = " + passageListLen);
 //        System.out.println("score = " + ((double) matchesCounter / (double) passageListLen));

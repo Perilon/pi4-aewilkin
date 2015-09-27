@@ -37,20 +37,20 @@ public class QuestionAnnotator extends JCasAnnotator_ImplBase {
       
       /*      Removes most html tags, then all non-letter and non-digit and non-space characters from the string representing the question*/
       
-      questionText.replaceAll("</?TEXT>", "");
-      questionText.replaceAll("</?P>", "");
+//      questionText.replaceAll("</?TEXT>", "");
+//      questionText.replaceAll("</?P>", "");
+//      
+//      StringBuilder builder = new StringBuilder();
+//     
+//      for (char c : questionText.toCharArray()) {
+//        if (Character.isLetterOrDigit(c) || c == ' ') {
+//          builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
+//        }
+//      }
+//      
+//      String finalSentence = builder.toString();
       
-      StringBuilder builder = new StringBuilder();
-     
-      for (char c : questionText.toCharArray()) {
-        if (Character.isLetterOrDigit(c) || c == ' ') {
-          builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
-        }
-      }
-      
-      String finalSentence = builder.toString();
-      
-      annotation.setSentence(finalSentence);
+      annotation.setSentence(questionText);
       
       annotation.addToIndexes();
       

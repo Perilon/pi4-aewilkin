@@ -53,19 +53,19 @@ public class PassageAnnotator extends JCasAnnotator_ImplBase {
       
       /*      Removes most html tags, then all non-letter and non-digit characters from the string representing the passage*/
       
-      passageText.replaceAll("</?TEXT>", "");
-      passageText.replaceAll("</?P>", "");
-      
-      StringBuilder builder = new StringBuilder();
-     
-      for (char c : passageText.toCharArray()) {
-        if (Character.isLetterOrDigit(c) || c == ' ') {
-          builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
-        }
-      }
-      
-      String finalSentence = builder.toString();
-      annotation.setSentence(finalSentence);
+//      passageText.replaceAll("</?TEXT>", "");
+//      passageText.replaceAll("</?P>", "");
+//      
+//      StringBuilder builder = new StringBuilder();
+//     
+//      for (char c : passageText.toCharArray()) {
+//        if (Character.isLetterOrDigit(c) || c == ' ') {
+//          builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
+//        }
+//      }
+//      
+//      String finalSentence = builder.toString();
+      annotation.setSentence(passageText);
       
       
       annotation.addToIndexes();

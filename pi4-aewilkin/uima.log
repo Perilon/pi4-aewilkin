@@ -1,4 +1,104 @@
-12:26:03.691 - 17: org.apache.uima.collection.impl.cpm.CPMImpl.process: WARNING: Processing the request to stop the CPM. (Thread Name: AWT-EventQueue-0)
-12:26:03.708 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: AWT-EventQueue-0) 
-12:26:03.708 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: AWT-EventQueue-0)
-12:26:03.709 - 17: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2005. (Thread Name: AWT-EventQueue-0) 
+01:56:32.612 - 32: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
+org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:93)
+	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
+	... 12 more
+
+01:56:32.623 - 32: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
+org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:93)
+	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
+	... 12 more
+
+01:56:32.624 - 32: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
+org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:93)
+	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
+	... 12 more
+
+01:56:32.644 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container DocumentAnalyzerAE returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
+01:56:32.644 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
+org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.processUntilNextOutputCas(ASB_impl.java:570)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl$AggregateCasIterator.<init>(ASB_impl.java:412)
+	at org.apache.uima.analysis_engine.asb.impl.ASB_impl.process(ASB_impl.java:344)
+	at org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(AggregateAnalysisEngine_impl.java:265)
+	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:93)
+	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
+	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
+	... 12 more
+
+01:56:37.654 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CAS is being dropped due to the CPM error handling configuration. (Thread Name: [CasConsumer Pipeline Thread]::) Container Name: DocumentAnalyzerAE Cas Processor: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl
+01:56:37.656 - 32: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: DocumentAnalyzerAE 
+01:56:37.656 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) 
+01:56:37.680 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor DocumentAnalyzerAE is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
+01:56:37.680 - 32: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
+org.apache.uima.collection.base_cpm.AbortCPMException: 
+	at org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.incrementCasProcessorErrors(ProcessingContainer_Impl.java:795)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:1037)
+	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
+
+01:56:37.681 - 32: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
+01:56:37.681 - 32: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
+01:56:37.681 - 32: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
+01:56:37.681 - 32: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
+01:56:37.681 - 32: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true

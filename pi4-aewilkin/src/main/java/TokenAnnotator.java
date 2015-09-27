@@ -32,7 +32,7 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       Passage passage = (Passage) passageIter.next();
       
       
-      HashMap<String, Integer> seenTokens = new HashMap<String, Integer>();
+//      HashMap<String, Integer> seenTokens = new HashMap<String, Integer>();
       
       
       Matcher matcher = mTokenPattern.matcher(passage.getSentence());
@@ -56,7 +56,30 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
         
         token.setBegin(passage.getBegin() + matcher.start(1));
         token.setEnd(passage.getBegin() + matcher.end(1));
-        token.setToStringValue(matcher.group(1));
+        
+        String ts = token.getCoveredText();
+        
+        
+//        ts.replaceAll("</?TEXT>", "");
+//        ts.replaceAll("</?P>", "");
+        
+        StringBuilder builder = new StringBuilder();
+       
+        for (char c : ts.toCharArray()) {
+          if (Character.isLetterOrDigit(c) || c == ' ') {
+            builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
+          }
+        }
+        
+        String finalToken = builder.toString();
+        
+        
+        
+        
+//        token.setToStringValue(matcher.group(1));
+        
+        token.setToStringValue(finalToken);
+        
         token.addToIndexes();
         pos = matcher.end();
       }
@@ -74,7 +97,36 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
         Token token = new Token(aJCas);
         token.setBegin(question.getBegin() + matcher.start(1));
         token.setEnd(question.getBegin() + matcher.end(1));
-        token.setToStringValue(matcher.group(1));
+        
+        String ts = token.getCoveredText();
+        
+        
+//      ts.replaceAll("</?TEXT>", "");
+//      ts.replaceAll("</?P>", "");
+      
+        StringBuilder builder = new StringBuilder();
+       
+        for (char c : ts.toCharArray()) {
+          
+          /*Get rid of all punctuation here except the angle brackets that set off HTML tags; these, since they
+          enclose words that we also want to not count as proper tokens, are left in here so that the whole
+          tokens they enclose can be ignored later in InputDocumentAnnotator.*/
+          
+          if (Character.isLetterOrDigit(c) || c == '<' || c == '>') {
+            builder.append(Character.isLowerCase(c) ? c: Character.toLowerCase(c));
+          }
+        }
+        
+        String finalToken = builder.toString();
+        
+        
+        
+        
+  //      token.setToStringValue(matcher.group(1));
+        
+        token.setToStringValue(finalToken);        
+        
+//        token.setToStringValue(matcher.group(1));
         token.addToIndexes();
         pos = matcher.end();
       }
