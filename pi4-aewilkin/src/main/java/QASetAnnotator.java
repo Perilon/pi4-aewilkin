@@ -35,6 +35,8 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
     
     Iterator questionIter = questionIndex.iterator();
     
+    /*Put the Question IDs into a hashmap for lookup later*/
+    
     while (questionIter.hasNext()) {
       Question question = (Question) questionIter.next();
       String qID = question.getId();
@@ -43,7 +45,7 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
       QAIDs.put(qID, questionSentence);
     }
     
-    
+    /*For each question, add to the QASet indexes a QASet that contains the question and its associated answers.*/
     
     Iterator questionIter2 = questionIndex.iterator();
     
@@ -57,14 +59,25 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
       
       annotation.setQuestion(question);
       
-//      FSArray passageFSArray = new FSArray(aJCas);
+      String QID = question.getId();
+     
+
+      /*Put into the Passage FSArray of the QASet the passages whose IDs match each question in turn*/
       
       ArrayList<Passage> passageArrayList = new ArrayList<Passage>();
       
       Iterator passageIter = passageIndex.iterator();
       while (passageIter.hasNext()) {
         Passage passage = (Passage) passageIter.next();
-        if (QAIDs.get(passage.getId()) != null) {
+        
+//        System.out.println("passage.getId() = " + passage.getId());
+//        System.out.println("QID (question.getId()) = " + QID);
+        
+//        if (QAIDs.get(passage.getId()).equals(QID)) {
+          
+          if ((passage.getId()).equals(QID)) {
+          
+          System.out.println(passage);
           passageArrayList.add(passage);          
         }        
       }
@@ -75,79 +88,20 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
       
       for (int i = 0; i < len; i++) {
         Passage p = (Passage) passageArrayList.get(i);
+        p.setQuestion(question);
         passageFSArray.set(i, p);
       }
       
       annotation.setPassageFSArray(passageFSArray);
       
-      annotation.addToIndexes();
-      
-    }
-    
-    FSIndex QASetIndex = aJCas.getAnnotationIndex(QASet.type);
-    Iterator qaIter = QASetIndex.iterator();
-    while (qaIter.hasNext()) {
-      QASet qaSet = (QASet) qaIter.next();
-      
-      Question question = qaSet.getQuestion();
-      
-//      Now get the tokens in the question, put their string versions in a string array.
-      
-      FSIndex tokenIndex = aJCas.getAnnotationIndex(Token.type);
-      
-      List<Token> tokenQuestionList = JCasUtil.selectCovered(aJCas, Token.class, question.getBegin() - 1, question.getEnd());
-      
-      int questionListLen = tokenQuestionList.size();
-          
-      String[] tokenQuestionStringArray = new String[questionListLen];
-
-      for (int i = 0; i < questionListLen; i++) {
-        tokenQuestionStringArray[i] = tokenQuestionList.get(i).getToStringValue();
-      }
-      
-//      Now for each answer, get the tokens, put their string versions in a string array, and calculate the score.
-      
-      FSArray passageFSArray = qaSet.getPassageFSArray();
-      
-//      System.out.println(passageFSArray);
-      
-      int passageFSArrayLen = passageFSArray.size();
-      
-      for (int i = 0; i < passageFSArrayLen; i++) {
-        Passage passage = (Passage) passageFSArray.get(i);
-        
-//        System.out.println(passage);
-        
-        int begin = passage.getBegin();
-//        System.out.println(Integer.toString(begin));
-        int end = passage.getEnd();
-//        System.out.println(Integer.toString(end));
-        
-        List<Token> tokenPassageList = JCasUtil.selectCovered(aJCas, Token.class, passage.getBegin() - 1, passage.getEnd());
-        
-        int passageListLen = tokenPassageList.size();
-        
-        String[] tokenPassageStringArray = new String[passageListLen];
-        
-        for (int j = 0; j < passageListLen; j++) {
-          tokenPassageStringArray[j] = tokenPassageList.get(j).getToStringValue();
-        }
-
-        int matchesCounter = 0;
-        
-        for (int k = 0; k < tokenQuestionStringArray.length; k++) {
-          for (int L = 0; L < tokenPassageStringArray.length; L++) {
-            if (tokenQuestionStringArray[k].equals(tokenPassageStringArray[L])) {
-              matchesCounter++;
-            }
-          }
-        }
-        
-        passage.setScore(matchesCounter / passageListLen);
-        passage.addToIndexes();
-
-      }
-      qaSet.addToIndexes();
+      annotation.addToIndexes();      
     }
   }
 }
+
+
+
+
+
+
+

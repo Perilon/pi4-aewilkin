@@ -16,6 +16,10 @@
       <import location="/home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/QASetDescriptor.xml"/>
     
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="InputDocumentAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi4-aewilkin/pi4-aewilkin/src/main/resources/descriptors/InputDocumentAnnotatorDescriptor.xml"/>
+    
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
@@ -30,6 +34,7 @@
         <node>QuestionAnnotatorDescriptor</node>
         <node>TokenAnnotatorDescriptor</node>
       <node>QASetDescriptor</node>
+        <node>InputDocumentAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>

@@ -24,137 +24,86 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
     
     FSIndex passageIndex = aJCas.getAnnotationIndex(Passage.type);
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);
-    FSIndex tokenIndex = aJCas.getAnnotationIndex(Token.type);
-    FSIndex inputDocumentIndex = aJCas.getAnnotationIndex(InputDocument.type);
-    FSIndex qaIndex = aJCas.getAnnotationIndex(QASet.type);
+//    FSIndex tokenIndex = aJCas.getAnnotationIndex(Token.type);
+    FSIndex inputDocumentIndex = aJCas.getAnnotationIndex(InputDocument.type);   
+    
+    
+    FSIndex QASetIndex = aJCas.getAnnotationIndex(QASet.type);
+    
     
     
     InputDocument inputDocument = new InputDocument(aJCas);
     
-    Iterator qaIter = qaIndex.iterator();
     
-    while (qaIter.hasNext()) {
+    
+    Iterator qaIter = QASetIndex.iterator();
+    
+    
+    while (qaIter.hasNext()) {                    // Error on this line!
+      QASet qaSet = (QASet) qaIter.next();
       
-    }
-    
-    
-    
-    
-    
-    
-    
-    Iterator answerIter0 = answerIndex.iterator();
-    
-//    Find the total number of answers in order to initialize the FSArray of answers
-    
-    int numAnswers = 0;
-    
-    while (answerIter0.hasNext()) {
-      Passage ans = (Passage) answerIter0.next();
-      numAnswers++;
-    }
-    
-    FSArray answersArray = new FSArray(aJCas, numAnswers);
-    
-    
-    InputDocument inputDocument = new InputDocument(aJCas);
-    
-
-//    Get the question as an iterator in order to then loop through the answers to compare their ngram contents with those of the question.
-    
-    Iterator questionIter = questionIndex.iterator();
-        
-    while (questionIter.hasNext()) {
+      Question question = qaSet.getQuestion();
       
-      Question question = new Question(aJCas);
+//      Now get the tokens in the question, put their string versions in a string array.
       
-      question = (Question) questionIter.next();
-      int beginQuestion = question.getBegin();
-      int endQuestion = question.getEnd();
+      FSIndex tokenIndex = aJCas.getAnnotationIndex(Token.type);
       
-      question.setBegin(beginQuestion);
-      question.setEnd(endQuestion);
-      question.addToIndexes();
+      List<Token> tokenQuestionList = JCasUtil.selectCovered(aJCas, Token.class, question.getBegin() - 1, question.getEnd());
       
-      List<Ngram> ngramQuestionList = JCasUtil.selectCovered(aJCas, Ngram.class, beginQuestion - 1, endQuestion);
-      
-      int questionListLen = ngramQuestionList.size();
-      
-      FSArray ngramQuestionArray = new FSArray(aJCas, questionListLen);
-       
-//      Establish an array of the ngram annotations.
-      
-      for (int i = 0; i < questionListLen; i++) {
-          ngramQuestionArray.set(i, ngramQuestionList.get(i));
-      }
-      
-//      Establish an array of the string values of the ngrams with which to compare the string values of the ngrams of the answers.
-      
-      String[] ngramQuestionArrayToString = new String[questionListLen];
-      
-      for (int i = 0; i < questionListLen; i++) {
-        ngramQuestionArrayToString[i] = ngramQuestionList.get(i).getToStringValue();
-      }
-
-      
-      
-      Iterator answerIter = answerIndex.iterator();
-      
-      int answerNum = 0;
-      
-      while (answerIter.hasNext()) {
-        
-        answerNum++;
-        
-        Passage answer = new Passage(aJCas);
-        
-        answer = (Passage) answerIter.next();
-        int beginAnswer = answer.getBegin();
-        int endAnswer = answer.getEnd();
-        
-        List<Ngram> ngramAnswerList = JCasUtil.selectCovered(aJCas, Ngram.class, beginAnswer - 1, endAnswer);
-        
-        int answerListLen = ngramAnswerList.size();
-        
-        FSArray ngramAnswerArray = new FSArray(aJCas, answerListLen);
-         
-        for (int i = 0; i < answerListLen; i++) {
-            ngramAnswerArray.set(i, ngramAnswerList.get(i));
-        }
-        
-        String[] ngramAnswerArrayToString = new String[answerListLen];
-        
-        for (int i = 0; i < answerListLen; i++) {
-          ngramAnswerArrayToString[i] = ngramAnswerList.get(i).getToStringValue();
-        }
-        
-//        Count how many matches there are between the ngrams of the answer and the ngrams of the question.
+      int questionListLen = tokenQuestionList.size();
           
+      String[] tokenQuestionStringArray = new String[questionListLen];
+
+      for (int i = 0; i < questionListLen; i++) {
+        tokenQuestionStringArray[i] = tokenQuestionList.get(i).getToStringValue();
+      }
+      
+//      Now for each answer, get the tokens, put their string versions in a string array, and calculate the score.
+      
+      FSArray passageFSArray = qaSet.getPassageFSArray();
+      
+      
+      int passageFSArrayLen = passageFSArray.size();
+      
+      for (int i = 0; i < passageFSArrayLen; i++) {
+        Passage passage = (Passage) passageFSArray.get(i);
+        
+//        System.out.println(passage);
+        
+        int begin = passage.getBegin();
+        int end = passage.getEnd();
+        
+        List<Token> tokenPassageList = JCasUtil.selectCovered(aJCas, Token.class, passage.getBegin() - 1, passage.getEnd());
+        
+        int passageListLen = tokenPassageList.size();
+        
+        String[] tokenPassageStringArray = new String[passageListLen];
+        
+        for (int j = 0; j < passageListLen; j++) {
+          tokenPassageStringArray[j] = tokenPassageList.get(j).getToStringValue();
+        }
+
         int matchesCounter = 0;
         
-        for (int i = 0; i < ngramAnswerArrayToString.length; i++) {
-          for (int j = 0; j < ngramQuestionArrayToString.length; j++) {
-            if (ngramAnswerArrayToString[i].equals(ngramQuestionArrayToString[j])) {
+        for (int k = 0; k < tokenQuestionStringArray.length; k++) {
+//          System.out.println(tokenQuestionStringArray[k]);
+          for (int L = 0; L < tokenPassageStringArray.length; L++) {
+//            System.out.println(tokenPassageStringArray[k]);
+            if (tokenQuestionStringArray[k].equals(tokenPassageStringArray[L])) {
               matchesCounter++;
             }
           }
         }
         
-        answer.setScore(matchesCounter);
+        passage.setScore(matchesCounter / passageListLen);
+        passage.addToIndexes();
         
-        answersArray.set(answerNum-1, answer);
-        
-        inputDocument.setAnswer(answer);
-        inputDocument.setAnswersArray(answersArray);
-        inputDocument.setQuestion(question);;
-        
-        inputDocument.addToIndexes();
+//        System.out.println(passage);
 
-        
       }
       
+      inputDocument.addToIndexes();
       
     }
   }
-
 }
