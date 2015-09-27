@@ -3,6 +3,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.JCas;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,22 +22,40 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
     
 
-    FSIndex answerIndex = aJCas.getAnnotationIndex(Passage.type);
+    FSIndex passageIndex = aJCas.getAnnotationIndex(Passage.type);
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);
 
     
-    Iterator answerIter = answerIndex.iterator();
+    Iterator passageIter = passageIndex.iterator();
     
-    while (answerIter.hasNext()) {
-      Passage answer = (Passage) answerIter.next();
+    while (passageIter.hasNext()) {
+      Passage passage = (Passage) passageIter.next();
       
-      Matcher matcher = mTokenPattern.matcher(answer.getSentence());
+      
+      HashMap<String, Integer> seenTokens = new HashMap<String, Integer>();
+      
+      
+      Matcher matcher = mTokenPattern.matcher(passage.getSentence());
       int pos = 0;
       while (matcher.find(pos)) {
 //        System.out.println(matcher);
         Token token = new Token(aJCas);
-        token.setBegin(answer.getBegin() + matcher.start(1));
-        token.setEnd(answer.getBegin() + matcher.end(1));
+        
+//        String ts = token.getCoveredText();
+//                
+//        if (seenTokens.get(ts) == null) {
+//          seenTokens.put(ts, 1);
+//        } else {
+//          int val = seenTokens.get(ts);
+//          seenTokens.put(ts, (val + 1));
+//        }
+//        
+//        
+//        int offset;
+        
+        
+        token.setBegin(passage.getBegin() + matcher.start(1));
+        token.setEnd(passage.getBegin() + matcher.end(1));
         token.setToStringValue(matcher.group(1));
         token.addToIndexes();
         pos = matcher.end();

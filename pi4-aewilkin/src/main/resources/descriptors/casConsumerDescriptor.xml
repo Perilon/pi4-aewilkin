@@ -32,7 +32,14 @@
     <fsIndexCollection/>
     <capabilities>
       <capability>
-        <inputs/>
+        <inputs>
+          <type allAnnotatorFeatures="true">type.Token</type>
+          <type allAnnotatorFeatures="true">type.Question</type>
+          <type allAnnotatorFeatures="true">type.QASet</type>
+          <type allAnnotatorFeatures="true">type.Passage</type>
+          <type allAnnotatorFeatures="true">type.InputDocument</type>
+          <type allAnnotatorFeatures="true">type.ComponentAnnotation</type>
+        </inputs>
         <outputs/>
         <languagesSupported/>
       </capability>

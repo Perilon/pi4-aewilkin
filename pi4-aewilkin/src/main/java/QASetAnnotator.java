@@ -37,13 +37,13 @@ public class QASetAnnotator extends JCasAnnotator_ImplBase {
     
     /*Put the Question IDs into a hashmap for lookup later*/
     
-    while (questionIter.hasNext()) {
-      Question question = (Question) questionIter.next();
-      String qID = question.getId();
-      String questionSentence = question.getSentence();
-      
-      QAIDs.put(qID, questionSentence);
-    }
+//    while (questionIter.hasNext()) {
+//      Question question = (Question) questionIter.next();
+//      String qID = question.getId();
+//      String questionSentence = question.getSentence();
+//      
+//      QAIDs.put(qID, questionSentence);
+//    }
     
     /*For each question, add to the QASet indexes a QASet that contains the question and its associated answers.*/
     
