@@ -107,9 +107,12 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
         
         double precision = (double) matchesCounter / (double) worthyMatches;
         double recall = (double) matchesCounter / (double) tokenQuestionStringArray.length;
+        double F1;
         
-        double F1 = 2 * ((precision * recall) / (precision + recall));
-        
+        if ((precision + recall) != 0) {
+          F1 = 2 * ((precision * recall) / (precision + recall));
+        } else
+          F1 = 0;
         
         passage.setScore(F1);
 //        System.out.println("matchesCounter = " + matchesCounter);

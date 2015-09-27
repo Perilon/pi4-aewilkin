@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Keeps track of which questions go with which answers
- * Updated by JCasGen Sat Sep 26 20:57:18 EDT 2015
+ * Updated by JCasGen Sun Sep 27 14:45:04 EDT 2015
  * @generated */
 public class QASet_Type extends ComponentAnnotation_Type {
   /** @generated 
